@@ -1,10 +1,9 @@
-import tkinter as tk
-from assets.styles.globalStyles import button_style, label_style
+import customtkinter as ctk
 
 def create_button(parent, text, command):
-    button = tk.Button(parent, text=text, command=command, **button_style)
+    button = ctk.CTkButton(parent, text=text, command=command)
     return button
 
 def create_label(parent, text):
-    label = tk.Label(parent, text=text, **label_style)
+    label = ctk.CTkLabel(parent, text=text)
     return label
