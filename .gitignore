@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Shelve database files
+*.db
+*.dat
+*.bak
+*.dir
+
+# PyMongo database files (if any)
+
+# Specific files
+test.py
+
+# IDE/project settings (example for common IDEs)
+.idea/
+.vscode/
+
+Ali
