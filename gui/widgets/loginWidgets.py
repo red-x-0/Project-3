@@ -1,7 +1,7 @@
 from tkinter import *
 from assets.styles.loginStyles import LOGIN_LABEL_STYLE, LABEL_STYLE, BUTTON_STYLE, SMALL_LABEL_STYLE, SMALL_BUTTON_STYLE
 
-def create_login_form(parent, login_callback):
+def create_login_form(parent, login_callback, controller):
     login_label = Label(parent, text="Login", **LOGIN_LABEL_STYLE)
     login_label.pack(fill=X)
     
@@ -22,10 +22,10 @@ def create_login_form(parent, login_callback):
     submit = Button(frame, text="LOGIN", **BUTTON_STYLE, command=login_callback)
     submit.grid(row=5, column=0, padx=50, pady=30)
     
-    signup_label = Label(frame, text="Have an acount,", **SMALL_LABEL_STYLE)
+    signup_label = Label(frame, text="Doesn't have an acount,", **SMALL_LABEL_STYLE)
     signup_label.grid(row=6, column=0, padx=100, pady=15, sticky=W)
     
-    signup = Button(frame, text="Signup", **SMALL_BUTTON_STYLE, relief="flat")
+    signup = Button(frame, text="Signup", **SMALL_BUTTON_STYLE, relief="flat", command=lambda: controller.show_frame("SignupFrame"))
     signup.grid(row=6, column=0, padx=200, pady=15)
 
     return frame, username_entry, passowrd_entry

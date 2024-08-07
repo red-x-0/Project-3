@@ -1,10 +1,8 @@
-# from gui.main_window import MainWindow
-from gui.signup_window import SignupWindow
-
+from gui.main_app import MainApp
 
 def main():
-    app = SignupWindow()
-    app.run()
+    app = MainApp()
+    app.mainloop()
 
 if __name__ == "__main__":
     main()
