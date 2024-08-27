@@ -38,4 +38,4 @@ class SignupFrame(ctk.CTkFrame):
             "age": 0
         }
         addUser(user)
-        self.controller.show_frame("LoginFrame")
+        self.controller.show_frame("CompleteSignupFrame")

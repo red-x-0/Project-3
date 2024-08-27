@@ -9,12 +9,13 @@ __pycache__/
 *.bak
 *.dir
 
-# PyMongo database files (if any)
+# PyMongo database files 
+mongodb data/
 
 # Specific files
 test.py
 
-# IDE/project settings (example for common IDEs)
+# IDE/project settings
 .idea/
 .vscode/
 

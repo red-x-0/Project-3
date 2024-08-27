@@ -37,6 +37,6 @@ class CompleteSignupFrame(ctk.CTkFrame):
         }
         
         if editUser(user_id, updates):
-            self.controller.show_frame("LoginFrame")
+            self.controller.show_frame("MainFrame")
         else:
             messagebox.showerror("Signup Failed", "Failed to update user details")

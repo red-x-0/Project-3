@@ -33,4 +33,4 @@ class LoginFrame(ctk.CTkFrame):
             else:
                 messagebox.showerror("Login Failed", "Invalid username or password")
         else:
-            messagebox.showerror("Login Failed", "User not found")
+            messagebox.showerror("Login Failed", "Invalid username or password")

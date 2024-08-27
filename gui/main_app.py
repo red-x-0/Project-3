@@ -16,6 +16,7 @@ class MainApp(tk.Tk):
         screen_width = self.winfo_screenwidth()
         screen_height = self.winfo_screenheight()
         self.geometry(f"{screen_width}x{screen_height}")
+        self.iconbitmap('J:\\Project 3\\assets\\imgs\icon.ico')
         self.frames = {}
 
         self.minsize(600, 400)  # Minimum size: width=600, height=400
@@ -26,11 +27,15 @@ class MainApp(tk.Tk):
         ctk.set_appearance_mode("system")
         ctk.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
+        # Configure grid row and column weights
+        self.container.grid_rowconfigure(0, weight=1)
+        self.container.grid_columnconfigure(0, weight=1)
+
         for F in (LoginFrame, SignupFrame, MainFrame, CompleteSignupFrame):
             page_name = F.__name__
             frame = F(parent=self.container, controller=self)
             self.frames[page_name] = frame
-            frame.grid(row=0, column=0, sticky="nsew")
+            frame.grid(row=0, column=0, sticky="nsew")  # Ensure frame expands to fill the container
         
         self.show_frame("LoginFrame" if not load_token() else self.check_user())
     
@@ -46,7 +51,7 @@ class MainApp(tk.Tk):
             return "LoginFrame"
 
         # Ensure user_data is a dictionary and access its fields correctly
-        if int(user_data.get("weight")) > 10 and int(user_data.get("height")) > 10 and int(user_data.get("age")) > 13:
+        if int(user_data.get("weight", 0)) > 10 and int(user_data.get("height", 0)) > 10 and int(user_data.get("age", 0)) > 13:
             return "MainFrame"
         else:
             return "CompleteSignupFrame"
